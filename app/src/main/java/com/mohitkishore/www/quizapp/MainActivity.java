@@ -13,6 +13,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private static final String CANADA_CAPITAL = "Ottawa";
     private static final String USA_STATES = "50";
+    private static final String YOU_SCORED = "You scored ";
+    private static final int TOTAL_NUMBER_OF_QUESTIONS = 4;
+
+    private static int mScore = 0;
     RadioGroup mQ1RadioGroup;
     CheckBox mCheckboxCanada;
     CheckBox mCheckboxPeru;
@@ -48,16 +52,26 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void submitAnswers() {
-        if( planetAnswer() && countriesInNA() && getCanadaCapital() && getUsaStatesNumber()){
-            Toast.makeText(this, getString(R.string.awesome_job), Toast.LENGTH_LONG).show();
+        boolean answer1 = planetAnswer();
+        boolean answer2 = countriesInNA();
+        boolean answer3 = getCanadaCapital();
+        boolean answer4 = getUsaStatesNumber();
+        if (answer1 && answer2 && answer3 && answer4) {
+            makeToast(getString(R.string.awesome_job) + YOU_SCORED + mScore + "/" + TOTAL_NUMBER_OF_QUESTIONS);
         } else {
-            Toast.makeText(this, getString(R.string.google_time), Toast.LENGTH_LONG).show();
+            makeToast(getString(R.string.google_time) + YOU_SCORED + mScore + "/" + TOTAL_NUMBER_OF_QUESTIONS);
         }
+        mScore = 0;
+    }
+
+    private void makeToast(String message) {
+        Toast.makeText(this, message, Toast.LENGTH_LONG).show();
     }
 
     private boolean planetAnswer() {
         int checkedId = mQ1RadioGroup.getCheckedRadioButtonId();
         if (checkedId == R.id.earth) {
+            mScore++;
             return true;
         } else {
             return false;
@@ -66,22 +80,27 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private boolean countriesInNA() {
         if (mCheckboxCanada.isChecked() && mCheckboxUsa.isChecked()) {
+            mScore++;
             return true;
         } else {
             return false;
         }
     }
 
-    private boolean getCanadaCapital(){
-        if(mCanadaCapital.getText().toString().equalsIgnoreCase(CANADA_CAPITAL) ){
+    private boolean getCanadaCapital() {
+        String answer = mCanadaCapital.getText().toString().trim();
+        if (answer.equalsIgnoreCase(CANADA_CAPITAL.trim())) {
+            mScore++;
             return true;
         } else {
             return false;
         }
     }
 
-    private boolean getUsaStatesNumber(){
-        if(mUsaStates.getText().toString().equalsIgnoreCase(USA_STATES)){
+    private boolean getUsaStatesNumber() {
+        String answer = mUsaStates.getText().toString().trim();
+        if (answer.equalsIgnoreCase(USA_STATES.trim())) {
+            mScore++;
             return true;
         } else {
             return false;
