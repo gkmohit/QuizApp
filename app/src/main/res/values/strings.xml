@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="question">Question</string>
+    <string name="hint_answer">Answer</string>
+    <string name="q1">What planet do we live on ?</string>
+    <string name="q1_radio_button1">Mars</string>
+    <string name="q1_radio_button2">Venus</string>
+    <string name="q1_radio_button3">Earth</string>
+    <string name="q2">Select all the countries from North America</string>
+    <string name="q2_checkbox1">Canada</string>
+    <string name="q2_checkbox2">Peru</string>
+    <string name="q2_checkbox3">USA</string>
+    <string name="q2_checkbox4">Argentina</string>
+    <string name="q3">What is the capital of Canada?</string>
+    <string name="q4">How many states are in the US of A?</string>
+    <string name="q5">How many days are there in a year?</string>
+    <string name="submit">Submit</string>
+    <string name="awesome_job">Awesome job buddy, keep up the good work.</string>
+    <string name="google_time">Time to use some google for today ;). I am sure you can do it.</string>
+
+</resources>

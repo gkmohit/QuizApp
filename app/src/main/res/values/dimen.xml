@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="padding">16dp</dimen>
+    <dimen name="question_number_text">20sp</dimen>
+    <dimen name="question_text_size">45sp</dimen>
+    <dimen name="radio_button_text_size">24sp</dimen>
+    <dimen name="check_box_text_size">24sp</dimen>
+    <dimen name="answer_edit_text_text_size">24sp</dimen>
+</resources>
