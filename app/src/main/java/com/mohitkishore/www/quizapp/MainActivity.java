@@ -79,7 +79,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private boolean countriesInNA() {
-        if (mCheckboxCanada.isChecked() && mCheckboxUsa.isChecked()) {
+        if (mCheckboxCanada.isChecked() && mCheckboxUsa.isChecked() && !mCheckboxPeru.isChecked()) {
             mScore++;
             return true;
         } else {
